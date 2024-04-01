@@ -13,8 +13,8 @@
 <p>lorem ipsum</p>
 
 <h1>Materials/Data Source</h1>
-<a href="https://www.cnrfc.noaa.gov/monthly_precip_2002.php">Monthly Precipitation Summary (2002-Present)</a>
-<p>Data provided by California Nevada River Forecast Center and National Oceanic and Atmospheric Administration.</p>
+<a href="https://www.cnrfc.noaa.gov/monthly_precip_2002.php">Monthly Precipitation Summary of Water Year(2002)</a>
+<p>Data provided by California Nevada River Forecast Center and National Oceanic and Atmospheric Administration. Water Year (WY) starts October 1st of the previous year and ends September 30th of reference year.</p>
 
 <a href="">LINK</a>
 <p>lorem ipsum</p>
