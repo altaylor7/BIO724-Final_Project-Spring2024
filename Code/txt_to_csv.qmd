@@ -1,0 +1,64 @@
+---
+title: "AT456-Final_Project_Code-Spring2023"
+author: "Annabelle Taylor, AT456"
+date: today
+date-format: iso
+format: 
+  html:
+    embed-resources: true
+editor: source
+---
+Convert .txt file with whitespace delimiter to .csv steps (not automated):
+1. upload using read_table and set col_names = FALSE, assign to variable
+2. use write.csv(x, file = "path/to/your/file.csv", row.names = FALSE, col.names = FALSE)
+  col.names may be 'ignored', thats okay, it means there were no column names to remove
+3. check the file was created using file.exists("path/to/your/file.csv")
+
+
+```{r} 
+# upload original .txt files with whitespace delimiter and no column headers
+# must be saved as a variable
+library(readr)
+CRND0103_2020_CA_Redding_12_WNW <- read_table("~/Desktop/California Weather Data/Original .txt files/CRND0103-2020-CA_Redding_12_WNW.txt", 
+    col_names = FALSE)
+```
+
+```{r}
+getwd()
+```
+
+
+```{r}
+# write.csv(x, file = "path/to/your/file.csv") will create, overwrite, or append to the listed .csv file. x should be a defined table variable in R
+# use append = TRUE to append data to an existing csv
+# row.names = FALSE prevents rows being numbered in the .csv file
+# col.names = FALSE will not download headers
+write.csv(CRND0103_2020_CA_Redding_12_WNW, file = "/Users/user/Desktop/California Weather Data/Formatted/CRND0103_2020_CA_Redding_12_WNW.csv", col.names = FALSE, row.names = FALSE)
+```
+
+```{r}
+# check that the file was succesfully created
+file.exists("/Users/user/Desktop/California Weather Data/Formatted/CRND0103_2020_CA_Redding_12_WNW.csv")
+```
+
+```{r}
+CRND0103_2021_CA_Redding_12_WNW <- read_table("~/Desktop/California Weather Data/Original .txt files/CRND0103-2021-CA_Redding_12_WNW.txt", 
+    col_names = FALSE)
+CRND0103_2022_CA_Redding_12_WNW <- read_table("~/Desktop/California Weather Data/Original .txt files/CRND0103-2022-CA_Redding_12_WNW.txt", 
+    col_names = FALSE)
+CRND0103_2023_CA_Redding_12_WNW <- read_table("~/Desktop/California Weather Data/Original .txt files/CRND0103-2023-CA_Redding_12_WNW.txt", 
+    col_names = FALSE)
+```
+
+```{r}
+write.csv(CRND0103_2021_CA_Redding_12_WNW, file = "/Users/user/Desktop/California Weather Data/Formatted/CRND0103_2021_CA_Redding_12_WNW.csv", col.names = FALSE, row.names = FALSE)
+write.csv(CRND0103_2022_CA_Redding_12_WNW, file = "/Users/user/Desktop/California Weather Data/Formatted/CRND0103_2022_CA_Redding_12_WNW.csv", col.names = FALSE, row.names = FALSE)
+write.csv(CRND0103_2023_CA_Redding_12_WNW, file = "/Users/user/Desktop/California Weather Data/Formatted/CRND0103_2023_CA_Redding_12_WNW.csv", col.names = FALSE, row.names = FALSE)
+```
+
+```{r}
+file.exists("/Users/user/Desktop/California Weather Data/Formatted/CRND0103_2021_CA_Redding_12_WNW.csv")
+file.exists("/Users/user/Desktop/California Weather Data/Formatted/CRND0103_2022_CA_Redding_12_WNW.csv")
+file.exists("/Users/user/Desktop/California Weather Data/Formatted/CRND0103_2023_CA_Redding_12_WNW.csv")
+```
+
